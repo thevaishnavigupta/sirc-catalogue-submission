@@ -8,7 +8,7 @@
 
     <title> SIRC Catalogue Submission</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -22,7 +22,12 @@
    
     
     
-        <form>
+        <form 
+          action="https://script.google.com/macros/s/AKfycbzD1H_1ugjLEWqfAHpcm6QiauZqFqh9wYqg0uvWaYrIWwzLL2CicxWmWTL_9PYgRtHV/exec"
+          method="POST"
+          target="hidden_iframe"
+          enctype="application/x-www-form-urlencoded">
+            
         
             <lable>Student Name</lable>
             <input type="text" placeholder="Enter your name"required>
@@ -40,15 +45,20 @@
 
         
             <label>Uplode file</label>
-            <input type="file"required>
+            <input type="file" id="fileinput">
 
-        
+            <input type="hidden" name="fileAttached"
+            id="fileAttached" value="No">
+            
             <button type="submit">Submit </button>
         
     
         </form>
 
-        <script src=" js/script.js"></script>   
+        <iframe name="hidden_iframe"
+        style="display:none;"></iframe>
+
+        <script src="js/script.js"></script>   
 
     </div> 
     
