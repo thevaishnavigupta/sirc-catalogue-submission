@@ -1,14 +1,16 @@
 
-// Select the form from HTML
 const form = document.querySelector("form");
 
-// Detect when someone submits the form
-form.addEventListener("submit", function(event) {
+const fileInput = document.getElementById("fileInput");
 
-    // Prevent the page from refreshing
-    event.preventDefault();
+const fileAttached = document.getElementById("fileAttached");
 
-    // Show confirmation message
-    alert("Your form is ready! Submission storage is not connected yet.");
+form.addEventListener("submit", function() {
+
+    if (fileInput.files.length > 0) {
+        fileAttached.value = "Yes";
+    } else {
+        fileAttached.value = "No";
+    }
 
 });
